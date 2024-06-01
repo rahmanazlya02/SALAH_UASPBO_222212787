@@ -26,7 +26,5 @@ public class Connection_mahasiswa {
             JOptionPane.showMessageDialog(null, e);
             return null;
         }
-    }
-    
-    
+    } 
 }
