@@ -41,7 +41,7 @@
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="37" max="32767" attributes="0"/>
+              <EmptySpace pref="35" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -82,7 +82,7 @@
                       <Group type="102" attributes="0">
                           <Component id="simpanButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="resetButton" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Component id="editButton" min="-2" pref="83" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -95,15 +95,16 @@
                           </Group>
                           <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="lakiRadioButton" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
-                              <Component id="perempuanRadioButton" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
                               <Component id="emailTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="nimTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="namaTextField" alignment="0" max="32767" attributes="0"/>
-                              <Component id="provinsiComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" alignment="0" min="-2" pref="208" max="-2" attributes="0"/>
+                              <Component id="provinsiComboBox" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lakiRadioButton" alignment="0" max="32767" attributes="0"/>
+                              <Component id="perempuanRadioButton" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" alignment="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <Component id="resetButton" alignment="1" min="-2" pref="75" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="72" max="32767" attributes="0"/>
               </Group>
@@ -148,9 +149,11 @@
                   </Group>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="editButton" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                       <Component id="simpanButton" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="resetButton" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Component id="resetButton" min="-2" pref="37" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -274,13 +277,45 @@
               <Font name="Sitka Text" size="14" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
-                <StringItem index="0" value="Aceh"/>
-                <StringItem index="1" value="DKI Jakarta"/>
-                <StringItem index="2" value="Jawa Timur"/>
-                <StringItem index="3" value="Bali"/>
-                <StringItem index="4" value="Maluku"/>
-                <StringItem index="5" value="Papua"/>
+              <StringArray count="38">
+                <StringItem index="0" value="Nanggroe Aceh Darussalam"/>
+                <StringItem index="1" value="Sumatera Utara"/>
+                <StringItem index="2" value="Sumatera Selatan"/>
+                <StringItem index="3" value="Sumatera Barat"/>
+                <StringItem index="4" value="Bengkulu"/>
+                <StringItem index="5" value="Riau"/>
+                <StringItem index="6" value="Kepulauan Riau"/>
+                <StringItem index="7" value="Jambi"/>
+                <StringItem index="8" value="Lampung"/>
+                <StringItem index="9" value="Bangka Belitung "/>
+                <StringItem index="10" value="Kalimantan Barat "/>
+                <StringItem index="11" value="Kalimantan Timur "/>
+                <StringItem index="12" value="Kalimantan Selatan "/>
+                <StringItem index="13" value="Kalimantan Tengah "/>
+                <StringItem index="14" value="Kalimantan Utara "/>
+                <StringItem index="15" value="Banten "/>
+                <StringItem index="16" value="DKI Jakarta "/>
+                <StringItem index="17" value="Jawa Barat "/>
+                <StringItem index="18" value="Jawa Tengah "/>
+                <StringItem index="19" value="Daerah Istimewa Yogyakarta "/>
+                <StringItem index="20" value="Jawa Timur "/>
+                <StringItem index="21" value="Bali "/>
+                <StringItem index="22" value="Nusa Tenggara Timur "/>
+                <StringItem index="23" value="Nusa Tenggara Barat "/>
+                <StringItem index="24" value="Gorontalo "/>
+                <StringItem index="25" value="Sulawesi Barat "/>
+                <StringItem index="26" value="Sulawesi Tengah "/>
+                <StringItem index="27" value="Sulawesi Utara "/>
+                <StringItem index="28" value="Sulawesi Tenggara "/>
+                <StringItem index="29" value="Sulawesi Selatan "/>
+                <StringItem index="30" value="Maluku Utara "/>
+                <StringItem index="31" value="Maluku "/>
+                <StringItem index="32" value="Papua Barat "/>
+                <StringItem index="33" value="Papua "/>
+                <StringItem index="34" value="Papua Tengah "/>
+                <StringItem index="35" value="Papua Pegunungan "/>
+                <StringItem index="36" value="Papua Selatan"/>
+                <StringItem index="37" value="Papua Barat Daya"/>
               </StringArray>
             </Property>
           </Properties>
@@ -334,6 +369,23 @@
             <Property name="text" type="java.lang.String" value="Form Isi Data Diri Mahasiswa"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JButton" name="editButton">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="  Edit  "/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editButtonActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel2">
@@ -356,10 +408,8 @@
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="editButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="hapusButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="printButton" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -399,7 +449,6 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="printButton" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="hapusButton" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="editButton" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
@@ -481,23 +530,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="editButton">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="ff" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="14" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="  Edit  "/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editButtonActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JButton" name="hapusButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -526,7 +558,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="  Print  "/>
+            <Property name="text" type="java.lang.String" value="Export to Csv"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">

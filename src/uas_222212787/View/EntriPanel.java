@@ -66,10 +66,10 @@ public class EntriPanel extends javax.swing.JPanel {
         resetButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        editButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         mahasiswaTable = new javax.swing.JTable();
-        editButton = new javax.swing.JButton();
         hapusButton = new javax.swing.JButton();
         printButton = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
@@ -127,7 +127,7 @@ public class EntriPanel extends javax.swing.JPanel {
         jLabel2.setText("NIM : ");
 
         provinsiComboBox.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        provinsiComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aceh", "DKI Jakarta", "Jawa Timur", "Bali", "Maluku", "Papua" }));
+        provinsiComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nanggroe Aceh Darussalam", "Sumatera Utara", "Sumatera Selatan", "Sumatera Barat", "Bengkulu", "Riau", "Kepulauan Riau", "Jambi", "Lampung", "Bangka Belitung ", "Kalimantan Barat ", "Kalimantan Timur ", "Kalimantan Selatan ", "Kalimantan Tengah ", "Kalimantan Utara ", "Banten ", "DKI Jakarta ", "Jawa Barat ", "Jawa Tengah ", "Daerah Istimewa Yogyakarta ", "Jawa Timur ", "Bali ", "Nusa Tenggara Timur ", "Nusa Tenggara Barat ", "Gorontalo ", "Sulawesi Barat ", "Sulawesi Tengah ", "Sulawesi Utara ", "Sulawesi Tenggara ", "Sulawesi Selatan ", "Maluku Utara ", "Maluku ", "Papua Barat ", "Papua ", "Papua Tengah ", "Papua Pegunungan ", "Papua Selatan", "Papua Barat Daya" }));
 
         nimTextField.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         nimTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -153,6 +153,16 @@ public class EntriPanel extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
         jLabel8.setText("Form Isi Data Diri Mahasiswa");
 
+        editButton.setBackground(new java.awt.Color(255, 102, 102));
+        editButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        editButton.setForeground(new java.awt.Color(255, 255, 255));
+        editButton.setText("  Edit  ");
+        editButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -167,7 +177,7 @@ public class EntriPanel extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(simpanButton)
                         .addGap(18, 18, 18)
-                        .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -178,13 +188,14 @@ public class EntriPanel extends javax.swing.JPanel {
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(86, 86, 86)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lakiRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(perempuanRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(emailTextField)
                             .addComponent(nimTextField)
                             .addComponent(namaTextField)
-                            .addComponent(provinsiComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(provinsiComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lakiRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(perempuanRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                    .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -220,8 +231,10 @@ public class EntriPanel extends javax.swing.JPanel {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(simpanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(simpanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -254,16 +267,6 @@ public class EntriPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(mahasiswaTable);
 
-        editButton.setBackground(new java.awt.Color(255, 102, 102));
-        editButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        editButton.setForeground(new java.awt.Color(255, 255, 255));
-        editButton.setText("  Edit  ");
-        editButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editButtonActionPerformed(evt);
-            }
-        });
-
         hapusButton.setBackground(new java.awt.Color(255, 102, 102));
         hapusButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         hapusButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -277,7 +280,7 @@ public class EntriPanel extends javax.swing.JPanel {
         printButton.setBackground(new java.awt.Color(255, 102, 102));
         printButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         printButton.setForeground(new java.awt.Color(255, 255, 255));
-        printButton.setText("  Print  ");
+        printButton.setText("Export to Csv");
 
         jLabel9.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
         jLabel9.setText("Daftar Data Diri Mahasiswa");
@@ -319,10 +322,8 @@ public class EntriPanel extends javax.swing.JPanel {
                         .addGap(34, 34, 34)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(editButton)
-                                .addGap(18, 18, 18)
                                 .addComponent(hapusButton)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(printButton))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -352,8 +353,7 @@ public class EntriPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(printButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hapusButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hapusButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25))
         );
 
@@ -376,7 +376,7 @@ public class EntriPanel extends javax.swing.JPanel {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
