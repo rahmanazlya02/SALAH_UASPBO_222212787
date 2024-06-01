@@ -20,7 +20,7 @@ public class Connection_mahasiswa {
         try{
             Class.forName("org.sqlite.JDBC");
             Connection conn = DriverManager.getConnection("jdbc:sqlite:UAS_222212787.db");
-            JOptionPane.showMessageDialog(null, "Berhasil Koneksi ke Database");
+            //JOptionPane.showMessageDialog(null, "Berhasil Koneksi ke Database");
             return conn;
         } catch(Exception e) {
             JOptionPane.showMessageDialog(null, e);

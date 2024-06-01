@@ -6,6 +6,7 @@ package uas_222212787.View;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import java.sql.*;
+import javax.swing.*;
 
 //import latihan.gui.EntryPanel;
 //import latihan.gui.LoginPanel;
@@ -15,13 +16,17 @@ import java.sql.*;
  * @author Nazlya
  */
 public class MainFrame extends javax.swing.JFrame {
-
+    private boolean isLoggedIn = false;  
     /**
      * Creates new form MainFrame
      */
     public MainFrame() {
         initComponents();
-        contentScrollPane.setViewportView(new LoginPanel(contentScrollPane));
+        contentScrollPane.setViewportView(new LoginPanel(contentScrollPane, this));
+    }
+    
+    public void setLoggedIn(boolean isLoggedIn) {
+        this.isLoggedIn = isLoggedIn;
     }
 
     /**
@@ -104,7 +109,11 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void mahasiswaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mahasiswaMenuItemActionPerformed
         // TODO add your handling code here:
-        contentScrollPane.setViewportView(new EntriPanel());
+        if (isLoggedIn) {
+            contentScrollPane.setViewportView(new EntriPanel());
+        } else {
+            JOptionPane.showMessageDialog(this, "Silahkan Login dahulu!", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_mahasiswaMenuItemActionPerformed
 
     private void nilaiMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nilaiMenuItemActionPerformed
@@ -113,12 +122,16 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void homeMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeMenuActionPerformed
         // TODO add your handling code here:
-        
+        if (isLoggedIn) {
+            contentScrollPane.setViewportView(new homePanel());
+        } else {
+            JOptionPane.showMessageDialog(this, "Silahkan Login dahulu!", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_homeMenuActionPerformed
 
     private void backHomeMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backHomeMenuItemActionPerformed
         // TODO add your handling code here:
-        contentScrollPane.setViewportView(new homePanel()); 
+        contentScrollPane.setViewportView(new homePanel());
     }//GEN-LAST:event_backHomeMenuItemActionPerformed
 
     /**

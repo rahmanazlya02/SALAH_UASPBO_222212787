@@ -6,20 +6,35 @@ package uas_222212787.View;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import java.sql.*;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.*;
+import uas_222212787.Controller.Controller_User;
 
 /**
  *
  * @author Nazlya
  */
 public class LoginPanel extends javax.swing.JPanel {
-        private JScrollPane contentScrollPane;
+    private JScrollPane contentScrollPane;
+    private MainFrame mainFrame;
 
     /**
      * Creates new form LoginPanel
+     * @param mainFrame
      */
-    public LoginPanel(JScrollPane contentScrollPane) {
+    public LoginPanel(JScrollPane contentScrollPane, MainFrame mainFrame) {
         this.contentScrollPane = contentScrollPane;
+        this.mainFrame = mainFrame;  // Initialize the mainFrame
         initComponents();
+    }
+    
+    public String getUsername() {
+        return usernameTextField.getText();
+    }
+
+    public String getPassword() {
+        return new String(PasswordField.getPassword());
     }
 
     /**
@@ -112,9 +127,19 @@ public class LoginPanel extends javax.swing.JPanel {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         // TODO add your handling code here:
-        contentScrollPane.setViewportView(new homePanel());
+        Controller_User controller = new Controller_User(this, mainFrame);
+        controller.login();
     }//GEN-LAST:event_loginButtonActionPerformed
 
+    public void showLoginSuccess() {
+        mainFrame.setLoggedIn(true);  // Ensure this.mainFrame is not null
+        JOptionPane.showMessageDialog(this, "Login successful!");
+        contentScrollPane.setViewportView(new homePanel());
+    }
+    
+    public void showLoginFailure() {
+        JOptionPane.showMessageDialog(this, "Invalid username or password!");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField PasswordField;
@@ -124,4 +149,8 @@ public class LoginPanel extends javax.swing.JPanel {
     private javax.swing.JButton loginButton;
     private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
+
+    public void dispose() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
