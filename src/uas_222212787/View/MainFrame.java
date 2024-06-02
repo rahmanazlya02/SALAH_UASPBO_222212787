@@ -47,6 +47,7 @@ public class MainFrame extends javax.swing.JFrame {
         mahasiswaMenuItem = new javax.swing.JMenuItem();
         nilaiMenuItem = new javax.swing.JMenuItem();
         logoutMenu = new javax.swing.JMenu();
+        logoutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
@@ -100,6 +101,15 @@ public class MainFrame extends javax.swing.JFrame {
 
         logoutMenu.setText("Logout");
         logoutMenu.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+
+        logoutMenuItem.setText("Keluar Aplikasi");
+        logoutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutMenuItemActionPerformed(evt);
+            }
+        });
+        logoutMenu.add(logoutMenuItem);
+
         jMenuBar1.add(logoutMenu);
 
         setJMenuBar(jMenuBar1);
@@ -131,8 +141,25 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void backHomeMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backHomeMenuItemActionPerformed
         // TODO add your handling code here:
-        contentScrollPane.setViewportView(new homePanel());
+        if (isLoggedIn) {
+            contentScrollPane.setViewportView(new homePanel());
+        } else {
+            JOptionPane.showMessageDialog(this, "Silahkan Login dahulu!", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_backHomeMenuItemActionPerformed
+
+    private void logoutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutMenuItemActionPerformed
+        // TODO add your handling code here:
+        if (isLoggedIn) {
+            // Mengatur ulang status login agar bisa logout 
+            setLoggedIn(false);
+            // Ganti tampilan antarmuka pengguna kembali ke panel login
+            contentScrollPane.setViewportView(new LoginPanel(contentScrollPane, this));
+            JOptionPane.showMessageDialog(this, "Terima kasih telah menggunakan aplikasi!", "Logout", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Anda belum login, silahkan login dahulu!", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_logoutMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,6 +203,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenu homeMenu;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu logoutMenu;
+    private javax.swing.JMenuItem logoutMenuItem;
     private javax.swing.JMenuItem mahasiswaMenuItem;
     private javax.swing.JMenuItem nilaiMenuItem;
     // End of variables declaration//GEN-END:variables
