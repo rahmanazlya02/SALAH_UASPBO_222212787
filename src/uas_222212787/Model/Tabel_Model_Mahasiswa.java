@@ -5,16 +5,16 @@
 package uas_222212787.Model;
 
 import javax.swing.table.AbstractTableModel;
-import java.awt.List;
+import java.util.List;
 
 /**
  *
  * @author Nazlya
  */
 public class Tabel_Model_Mahasiswa extends AbstractTableModel{
-    java.util.List<Model_Mahasiswa> listMahasiswa;
+    List<Model_Mahasiswa> listMahasiswa;
     
-    public Tabel_Model_Mahasiswa(java.util.List<Model_Mahasiswa> listMahasiswa) {
+    public Tabel_Model_Mahasiswa(List<Model_Mahasiswa> listMahasiswa) {
         this.listMahasiswa = listMahasiswa;
     }
     @Override
@@ -31,11 +31,11 @@ public class Tabel_Model_Mahasiswa extends AbstractTableModel{
     public String getColumnName(int column) {
         return switch (column) {
             case 0 -> "NIM";
-            case 1 -> "NAMA";
-            case 2 -> "JENIS KELAMIN";
-            case 3 -> "EMAIL";
-            case 4 -> "PROVINSI";
-            case 5 -> "ALAMAT";
+            case 1 -> "Nama";
+            case 2 -> "Jenis Kelamin";
+            case 3 -> "Email";
+            case 4 -> "Kementerian";
+            case 5 -> "Alamat";
             default -> null;
         };
     }
@@ -47,7 +47,7 @@ public class Tabel_Model_Mahasiswa extends AbstractTableModel{
             case 1 -> listMahasiswa.get(row).getNamaMhs();
             case 2 -> listMahasiswa.get(row).getGender();
             case 3 -> listMahasiswa.get(row).getEmail();
-            case 4 -> listMahasiswa.get(row).getProvinsi();
+            case 4 -> listMahasiswa.get(row).getKementerian();
             case 5 -> listMahasiswa.get(row).getAlamat();
             default -> null;
         };

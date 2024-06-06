@@ -13,7 +13,7 @@ public class Model_Mahasiswa {
     private String namaMhs;
     private String gender;
     private String email;
-    private String provinsi;
+    private String kementerian;
     private String alamat;
     
     public String getNim() {
@@ -48,12 +48,12 @@ public class Model_Mahasiswa {
         this.email = email;
     }
 
-    public String getProvinsi() {
-        return provinsi;
+    public String getKementerian() {
+        return kementerian;
     }
 
-    public void setProvinsi(String provinsi) {
-        this.provinsi = provinsi;
+    public void setKementerian(String kementerian) {
+        this.kementerian = kementerian;
     }
 
     public String getAlamat() {

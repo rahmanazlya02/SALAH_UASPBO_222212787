@@ -46,7 +46,7 @@ public class homePanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(428, Short.MAX_VALUE)
+                .addContainerGap(448, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(365, 365, 365))
         );
@@ -55,7 +55,7 @@ public class homePanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(215, 215, 215)
                 .addComponent(jLabel1)
-                .addContainerGap(523, Short.MAX_VALUE))
+                .addContainerGap(583, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

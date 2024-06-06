@@ -41,7 +41,7 @@
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="35" max="32767" attributes="0"/>
+              <EmptySpace pref="43" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -93,7 +93,7 @@
                               <Component id="emailTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="nimTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="namaTextField" alignment="0" max="32767" attributes="0"/>
-                              <Component id="provinsiComboBox" alignment="0" max="32767" attributes="0"/>
+                              <Component id="kementerianComboBox" alignment="0" max="32767" attributes="0"/>
                               <Component id="lakiRadioButton" alignment="0" max="32767" attributes="0"/>
                               <Component id="perempuanRadioButton" alignment="0" max="32767" attributes="0"/>
                               <Component id="jScrollPane1" alignment="0" pref="0" max="32767" attributes="0"/>
@@ -142,7 +142,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="provinsiComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="kementerianComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -262,7 +262,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Sitka Text" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Provinsi :"/>
+            <Property name="text" type="java.lang.String" value="Kementerian :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -273,51 +273,19 @@
             <Property name="text" type="java.lang.String" value="NIM : "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="provinsiComboBox">
+        <Component class="javax.swing.JComboBox" name="kementerianComboBox">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Sitka Text" size="14" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="38">
-                <StringItem index="0" value="Nanggroe Aceh Darussalam"/>
-                <StringItem index="1" value="Sumatera Utara"/>
-                <StringItem index="2" value="Sumatera Selatan"/>
-                <StringItem index="3" value="Sumatera Barat"/>
-                <StringItem index="4" value="Bengkulu"/>
-                <StringItem index="5" value="Riau"/>
-                <StringItem index="6" value="Kepulauan Riau"/>
-                <StringItem index="7" value="Jambi"/>
-                <StringItem index="8" value="Lampung"/>
-                <StringItem index="9" value="Bangka Belitung "/>
-                <StringItem index="10" value="Kalimantan Barat "/>
-                <StringItem index="11" value="Kalimantan Timur "/>
-                <StringItem index="12" value="Kalimantan Selatan "/>
-                <StringItem index="13" value="Kalimantan Tengah "/>
-                <StringItem index="14" value="Kalimantan Utara "/>
-                <StringItem index="15" value="Banten "/>
-                <StringItem index="16" value="DKI Jakarta "/>
-                <StringItem index="17" value="Jawa Barat "/>
-                <StringItem index="18" value="Jawa Tengah "/>
-                <StringItem index="19" value="Daerah Istimewa Yogyakarta "/>
-                <StringItem index="20" value="Jawa Timur "/>
-                <StringItem index="21" value="Bali "/>
-                <StringItem index="22" value="Nusa Tenggara Timur "/>
-                <StringItem index="23" value="Nusa Tenggara Barat "/>
-                <StringItem index="24" value="Gorontalo "/>
-                <StringItem index="25" value="Sulawesi Barat "/>
-                <StringItem index="26" value="Sulawesi Tengah "/>
-                <StringItem index="27" value="Sulawesi Utara "/>
-                <StringItem index="28" value="Sulawesi Tenggara "/>
-                <StringItem index="29" value="Sulawesi Selatan "/>
-                <StringItem index="30" value="Maluku Utara "/>
-                <StringItem index="31" value="Maluku "/>
-                <StringItem index="32" value="Papua Barat "/>
-                <StringItem index="33" value="Papua "/>
-                <StringItem index="34" value="Papua Tengah "/>
-                <StringItem index="35" value="Papua Pegunungan "/>
-                <StringItem index="36" value="Papua Selatan"/>
-                <StringItem index="37" value="Papua Barat Daya"/>
+              <StringArray count="6">
+                <StringItem index="0" value="Kesekretariatan"/>
+                <StringItem index="1" value="Event dan Pengajaran"/>
+                <StringItem index="2" value="Media dan Informasi"/>
+                <StringItem index="3" value="Ekonomi Kreatif"/>
+                <StringItem index="4" value="Penelitian dan Pengembangan"/>
+                <StringItem index="5" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -407,7 +375,7 @@
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="hapusButton" min="-2" max="-2" attributes="0"/>
@@ -423,11 +391,11 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="refreshButton" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane2" alignment="0" min="-2" pref="741" max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" alignment="0" min="-2" pref="729" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="39" max="32767" attributes="0"/>
+                  <EmptySpace pref="35" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -484,7 +452,7 @@
                     <Column editable="true" title="Nama" type="java.lang.Object"/>
                     <Column editable="true" title="Jenis Kelamin" type="java.lang.Object"/>
                     <Column editable="true" title="Email" type="java.lang.Object"/>
-                    <Column editable="true" title="Provinsi" type="java.lang.Object"/>
+                    <Column editable="true" title="Kementerian" type="java.lang.Object"/>
                     <Column editable="true" title="Alamat" type="java.lang.Object"/>
                   </Table>
                 </Property>
@@ -562,6 +530,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Export to Csv"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="printButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>

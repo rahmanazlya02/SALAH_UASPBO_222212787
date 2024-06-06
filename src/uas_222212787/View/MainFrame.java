@@ -128,6 +128,11 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void nilaiMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nilaiMenuItemActionPerformed
         // TODO add your handling code here:
+        if (isLoggedIn) {
+            contentScrollPane.setViewportView(new NilaiPanel());
+        } else {
+            JOptionPane.showMessageDialog(this, "Silahkan Login dahulu!", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_nilaiMenuItemActionPerformed
 
     private void homeMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeMenuActionPerformed

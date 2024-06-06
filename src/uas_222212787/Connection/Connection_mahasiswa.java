@@ -8,23 +8,46 @@ import java.sql.SQLException;
 import java.sql.DriverManager;
 import java.sql.*;
 import javax.swing.*;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Nazlya
  */
 public class Connection_mahasiswa {
-    Connection conn = null;
+    //Connection conn = null;
+    
+   
+    
+    /*public static Connection getConnection() {
+        Connection conn = null;
+        try {
+            // Muat driver JDBC SQLite
+            Class.forName("org.sqlite.JDBC");
+            // Buat koneksi ke database SQLite
+            conn = DriverManager.getConnection("jdbc:sqlite:UAS_222212787.db");
+            // Aktifkan dukungan foreign key
+            try (Statement stmt = conn.createStatement()) {
+                stmt.execute("PRAGMA foreign_keys = ON");
+            }
+            return conn;
+        } catch (ClassNotFoundException | SQLException e) {
+            // Tampilkan pesan kesalahan jika terjadi masalah saat membuat koneksi
+            JOptionPane.showMessageDialog(null, e);
+            return null;
+        }
+    }*/
     
     public static Connection getConnection() {
         try{
             Class.forName("org.sqlite.JDBC");
             Connection conn = DriverManager.getConnection("jdbc:sqlite:UAS_222212787.db");
             //JOptionPane.showMessageDialog(null, "Berhasil Koneksi ke Database");
+            
             return conn;
         } catch(Exception e) {
             JOptionPane.showMessageDialog(null, e);
             return null;
         }
-    } 
+    }
 }

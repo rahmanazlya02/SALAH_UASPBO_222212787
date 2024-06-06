@@ -12,8 +12,11 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import uas_222212787.DAO.DAO_mahasiswa;
+import uas_222212787.DAO.DAO_nilai;
+import uas_222212787.DAOimplement.Impl_Nilai;
 import uas_222212787.DAOimplement.Implement_mahasiswa;
 import uas_222212787.Model.Model_Mahasiswa;
+import uas_222212787.Model.Model_Nilai;
 import uas_222212787.Model.Tabel_Model_Mahasiswa;
 import uas_222212787.View.EntriPanel;
 import uas_222212787.View.MainFrame;
@@ -26,21 +29,18 @@ public class Controller_Mahasiswa {
     
     EntriPanel frame_mahasiswa;
     Implement_mahasiswa implement_mahasiswa;
+    Impl_Nilai implement_nilai;
     java.util.List<Model_Mahasiswa> listMhs;
     
     public Controller_Mahasiswa(EntriPanel frame_mahasiswa) {
         this.frame_mahasiswa = frame_mahasiswa;
         implement_mahasiswa = new DAO_mahasiswa();
+        implement_nilai = new DAO_nilai();
         listMhs = implement_mahasiswa.getAll();
-        
-        frame_mahasiswa.getPrintButton().addActionListener((ActionEvent e) -> {
-            // Panggil fungsi cetak ke CSV
-            printToCSV();
-        });
     }
     
     // Fungsi untuk mencetak data ke CSV
-    private void printToCSV() {
+    public void printToCSV() {
     JFileChooser fileChooser = new JFileChooser();
     int result = fileChooser.showSaveDialog(frame_mahasiswa);
     if (result == JFileChooser.APPROVE_OPTION) {
@@ -65,7 +65,7 @@ public class Controller_Mahasiswa {
         frame_mahasiswa.getNamaTextField().setText("");
         frame_mahasiswa.getGenderButtonGroup().clearSelection();
         frame_mahasiswa.getEmailTextField().setText("");
-        frame_mahasiswa.getProvinsiComboBox().setSelectedIndex(-1);
+        frame_mahasiswa.getKementerianComboBox().setSelectedIndex(-1);
         frame_mahasiswa.getAlamatTextArea().setText("");
     }
     
@@ -93,7 +93,7 @@ public class Controller_Mahasiswa {
         }
         
     frame_mahasiswa.getEmailTextField().setText(mhs.getEmail());
-    frame_mahasiswa.getProvinsiComboBox().setSelectedItem(mhs.getProvinsi());
+    frame_mahasiswa.getKementerianComboBox().setSelectedItem(mhs.getKementerian());
     frame_mahasiswa.getAlamatTextArea().setText(mhs.getAlamat());
     }
     
@@ -105,8 +105,8 @@ public class Controller_Mahasiswa {
             frame_mahasiswa.getNamaTextField().getText().trim().isEmpty() ||
             (!frame_mahasiswa.getLakiRadioButton().isSelected() && !frame_mahasiswa.getPerempuanRadioButton().isSelected()) ||
             frame_mahasiswa.getEmailTextField().getText().trim().isEmpty() || 
-            frame_mahasiswa.getProvinsiComboBox().getSelectedItem() == null ||
-            frame_mahasiswa.getProvinsiComboBox().getSelectedItem().toString().trim().isEmpty()) {
+            frame_mahasiswa.getKementerianComboBox().getSelectedItem() == null ||
+            frame_mahasiswa.getKementerianComboBox().getSelectedItem().toString().trim().isEmpty()) {
             
             // Tampilkan pesan error jika ada input yang kosong
             javax.swing.JOptionPane.showMessageDialog(frame_mahasiswa, "Semua field harus diisi!", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
@@ -118,7 +118,7 @@ public class Controller_Mahasiswa {
         String nama = frame_mahasiswa.getNamaTextField().getText().trim();
         String gender = frame_mahasiswa.getLakiRadioButton().isSelected() ? "Laki-laki" : "Perempuan";
         String email = frame_mahasiswa.getEmailTextField().getText().trim();
-        String provinsi = frame_mahasiswa.getProvinsiComboBox().getSelectedItem().toString().trim();
+        String provinsi = frame_mahasiswa.getKementerianComboBox().getSelectedItem().toString().trim();
         String alamat = frame_mahasiswa.getAlamatTextArea().getText().trim();
 
         // Membuat objek Mahasiswa
@@ -127,7 +127,7 @@ public class Controller_Mahasiswa {
         mhs.setNamaMhs(nama);
         mhs.setGender(gender);
         mhs.setEmail(email);
-        mhs.setProvinsi(provinsi);
+        mhs.setKementerian(provinsi);
         mhs.setAlamat(alamat);
 
         // Memanggil metode DAO untuk menyimpan data
@@ -157,8 +157,8 @@ public class Controller_Mahasiswa {
                 frame_mahasiswa.getNamaTextField().getText().trim().isEmpty() ||
                 (!frame_mahasiswa.getLakiRadioButton().isSelected() && !frame_mahasiswa.getPerempuanRadioButton().isSelected()) ||
                 frame_mahasiswa.getEmailTextField().getText().trim().isEmpty() || 
-                frame_mahasiswa.getProvinsiComboBox().getSelectedItem() == null ||
-                frame_mahasiswa.getProvinsiComboBox().getSelectedItem().toString().trim().isEmpty()) {
+                frame_mahasiswa.getKementerianComboBox().getSelectedItem() == null ||
+                frame_mahasiswa.getKementerianComboBox().getSelectedItem().toString().trim().isEmpty()) {
 
                 // Tampilkan pesan error jika ada input yang kosong
                 javax.swing.JOptionPane.showMessageDialog(frame_mahasiswa, "Semua field harus diisi!", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
@@ -170,7 +170,7 @@ public class Controller_Mahasiswa {
             String nama = frame_mahasiswa.getNamaTextField().getText().trim();
             String gender = frame_mahasiswa.getLakiRadioButton().isSelected() ? "Laki-laki" : "Perempuan";
             String email = frame_mahasiswa.getEmailTextField().getText().trim();
-            String provinsi = frame_mahasiswa.getProvinsiComboBox().getSelectedItem().toString().trim();
+            String provinsi = frame_mahasiswa.getKementerianComboBox().getSelectedItem().toString().trim();
             String alamat = frame_mahasiswa.getAlamatTextArea().getText().trim();
 
             // Membuat objek Mahasiswa
@@ -179,14 +179,17 @@ public class Controller_Mahasiswa {
             mhs.setNamaMhs(nama);
             mhs.setGender(gender);
             mhs.setEmail(email);
-            mhs.setProvinsi(provinsi);
+            mhs.setKementerian(provinsi);
             mhs.setAlamat(alamat);
 
             // Memanggil metode DAO untuk memperbarui data
             implement_mahasiswa.update(mhs);
+            //memanggil metode DAO untuk memperbarui data nilai 
+            //Model_Nilai nilai = new Model_Nilai();
+            //implement_nilai.update(nilai);
 
             // Tampilkan pesan sukses
-            javax.swing.JOptionPane.showMessageDialog(frame_mahasiswa, "Data berhasil diperbarui!", "Sukses", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(frame_mahasiswa, "Data berhasil diperbarui! Silahkan update data di form nilai", "Sukses", javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
             // Reset form setelah data diperbarui
             reset();
@@ -200,7 +203,7 @@ public class Controller_Mahasiswa {
     
     //Menghapus Data pada tabel
     public void delete(){
-        if(!frame_mahasiswa.getNimTextField().getText().trim().isEmpty()) {
+        /*if(!frame_mahasiswa.getNimTextField().getText().trim().isEmpty()) {
             // Mengambil NIM dari field
             String nim = frame_mahasiswa.getNimTextField().getText().trim();
             implement_mahasiswa.delete(nim);
@@ -208,7 +211,19 @@ public class Controller_Mahasiswa {
             JOptionPane.showMessageDialog(null, "Data Berhasil Dihapus");
         } else {
             JOptionPane.showMessageDialog(frame_mahasiswa, "Silahkan Pilih Data yang Akan Dihapus");
-        }
+        }*/
+        
+        if(!frame_mahasiswa.getNimTextField().getText().trim().isEmpty()) {
+        // Mengambil NIM dari field
+        String nim = frame_mahasiswa.getNimTextField().getText().trim();
+        implement_mahasiswa.delete(nim);
+        // Memanggil metode deleteByNim dari DAO_nilai
+        implement_nilai.deleteByNim(nim);
+        
+        JOptionPane.showMessageDialog(null, "Data Berhasil Dihapus");
+    } else {
+        JOptionPane.showMessageDialog(frame_mahasiswa, "Silahkan Pilih Data yang Akan Dihapus");
+    }
     }
     
     //Mencari Data 

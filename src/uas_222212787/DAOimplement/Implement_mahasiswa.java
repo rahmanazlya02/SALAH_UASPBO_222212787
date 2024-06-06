@@ -4,7 +4,7 @@
  */
 package uas_222212787.DAOimplement;
 import uas_222212787.Model.Model_Mahasiswa;
-import java.awt.List;
+import java.util.List;
 
 /**
  *
@@ -15,7 +15,8 @@ public interface Implement_mahasiswa {
     public void update(Model_Mahasiswa a);
     public void delete(String nim);
     
-    public java.util.List<Model_Mahasiswa> getAll();
-    public java.util.List<Model_Mahasiswa> getCariNama(String namaMhs);
+    public List<Model_Mahasiswa> getAll();
+    public List<Model_Mahasiswa> getCariNama(String namaMhs);
+     public Model_Mahasiswa getByNim(String nim);  
     
 }

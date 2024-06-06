@@ -16,25 +16,31 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.table.TableModel;
-import uas_222212787.Controller.Controller_Mahasiswa;
+import uas_222212787.Controller.Controller_Nilai;
 
 /**
  *
  * @author Nazlya
  */
-public class EntriPanel extends javax.swing.JPanel {
-    Controller_Mahasiswa controller_mahasiswa;
+public class NilaiPanel extends javax.swing.JPanel {
+    Controller_Nilai controller_nilai;
 
     /**
      * Creates new form EntriPanel
      */
-    public EntriPanel() {
+    public NilaiPanel() {
         initComponents();
-        controller_mahasiswa = new Controller_Mahasiswa(this);
-        controller_mahasiswa.isiTableMhs();
+        controller_nilai = new Controller_Nilai(this);
+        controller_nilai.isiTableNilai();
+        // Menonaktifkan atau mengunci nimTextField, namaTextField, dan kementerianTextField
+        nimTextField.setEnabled(false);
+        namaTextField.setEnabled(false);
+        kementerianTextField.setEnabled(false);
+        nilaiAkhirTextField.setEnabled(false);
+        hasilKatTextField.setEnabled(false);
     }
 
-    EntriPanel(JScrollPane contentScrollPane) {
+    NilaiPanel(JScrollPane contentScrollPane) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -47,30 +53,31 @@ public class EntriPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        genderButtonGroup = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        alamatTextArea = new javax.swing.JTextArea();
-        jLabel7 = new javax.swing.JLabel();
-        namaTextField = new javax.swing.JTextField();
+        kementerianTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         simpanButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        emailTextField = new javax.swing.JTextField();
-        lakiRadioButton = new javax.swing.JRadioButton();
-        perempuanRadioButton = new javax.swing.JRadioButton();
-        jLabel6 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        kementerianComboBox = new javax.swing.JComboBox<>();
-        nimTextField = new javax.swing.JTextField();
+        namaTextField = new javax.swing.JTextField();
         resetButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         editButton = new javax.swing.JButton();
+        kinerjaTextField = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        kehadiranTextField = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        kreativitasTextField = new javax.swing.JTextField();
+        nilaiAkhirTextField = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        hasilKatTextField = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        nimTextField = new javax.swing.JTextField();
+        CalculateButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        mahasiswaTable = new javax.swing.JTable();
-        hapusButton = new javax.swing.JButton();
+        nilaiTable = new javax.swing.JTable();
         printButton = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -84,18 +91,10 @@ public class EntriPanel extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(224, 244, 255));
 
-        alamatTextArea.setColumns(20);
-        alamatTextArea.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        alamatTextArea.setRows(4);
-        jScrollPane1.setViewportView(alamatTextArea);
-
-        jLabel7.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel7.setText("Alamat :");
-
-        namaTextField.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        kementerianTextField.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel5.setText("Email :");
+        jLabel5.setText("Nilai Akhir :");
 
         simpanButton.setBackground(new java.awt.Color(255, 102, 102));
         simpanButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
@@ -108,31 +107,15 @@ public class EntriPanel extends javax.swing.JPanel {
         });
 
         jLabel3.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel3.setText("Jenis Kelamin :");
-
-        emailTextField.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-
-        genderButtonGroup.add(lakiRadioButton);
-        lakiRadioButton.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        lakiRadioButton.setText("Laki-Laki");
-
-        genderButtonGroup.add(perempuanRadioButton);
-        perempuanRadioButton.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        perempuanRadioButton.setText("Perempuan");
-
-        jLabel6.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel6.setText("Kementerian :");
+        jLabel3.setText("Nilai Kinerja :");
 
         jLabel2.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel2.setText("NIM : ");
+        jLabel2.setText("Nama : ");
 
-        kementerianComboBox.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        kementerianComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kesekretariatan", "Event dan Pengajaran", "Media dan Informasi", "Ekonomi Kreatif", "Penelitian dan Pengembangan", " " }));
-
-        nimTextField.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        nimTextField.addActionListener(new java.awt.event.ActionListener() {
+        namaTextField.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        namaTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nimTextFieldActionPerformed(evt);
+                namaTextFieldActionPerformed(evt);
             }
         });
 
@@ -147,19 +130,58 @@ public class EntriPanel extends javax.swing.JPanel {
         });
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        jLabel4.setText("Nama :");
+        jLabel4.setText("Kementerian :");
 
         jLabel8.setBackground(new java.awt.Color(255, 51, 102));
         jLabel8.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
-        jLabel8.setText("Form Isi Data Diri Mahasiswa");
+        jLabel8.setText("Form Isi Penilaian Staff");
 
         editButton.setBackground(new java.awt.Color(255, 102, 102));
         editButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         editButton.setForeground(new java.awt.Color(255, 255, 255));
-        editButton.setText("  Edit  ");
+        editButton.setText("Update");
         editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editButtonActionPerformed(evt);
+            }
+        });
+
+        kinerjaTextField.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+
+        jLabel11.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        jLabel11.setText("Nilai Kehadiran :");
+
+        kehadiranTextField.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+
+        jLabel12.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        jLabel12.setText("Nilai Kreativitas :");
+
+        kreativitasTextField.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+
+        nilaiAkhirTextField.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+
+        jLabel13.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        jLabel13.setText("Hasil Kategori Penilaian :");
+
+        hasilKatTextField.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+
+        jLabel6.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        jLabel6.setText("Nim :");
+
+        nimTextField.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        nimTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nimTextFieldActionPerformed(evt);
+            }
+        });
+
+        CalculateButton.setBackground(new java.awt.Color(255, 102, 102));
+        CalculateButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        CalculateButton.setForeground(new java.awt.Color(255, 255, 255));
+        CalculateButton.setText("Hitung");
+        CalculateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CalculateButtonActionPerformed(evt);
             }
         });
 
@@ -172,71 +194,96 @@ public class EntriPanel extends javax.swing.JPanel {
                 .addComponent(jLabel8)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
+                .addGap(64, 70, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(nimTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(109, 109, 109))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel13))
+                                .addGap(25, 25, 25)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nilaiAkhirTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(kreativitasTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                                        .addComponent(kinerjaTextField)
+                                        .addComponent(kehadiranTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                                        .addComponent(hasilKatTextField))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(CalculateButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(simpanButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addGap(107, 107, 107))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(86, 86, 86)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(emailTextField)
-                            .addComponent(nimTextField)
-                            .addComponent(namaTextField)
-                            .addComponent(kementerianComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lakiRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(perempuanRadioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(kementerianTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(namaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(simpanButton)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(resetButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(editButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE))))
-                .addContainerGap(72, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(48, 48, 48))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel8)
-                .addGap(29, 29, 29)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(jLabel6)
                     .addComponent(nimTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(namaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(namaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(lakiRadioButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(perempuanRadioButton)
+                    .addComponent(kementerianTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(kinerjaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(kehadiranTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(kementerianComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(kreativitasTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nilaiAkhirTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(hasilKatTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
+                .addGap(18, 18, 18)
+                .addComponent(CalculateButton)
+                .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(simpanButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(69, 69, 69))
         );
 
         jPanel2.setBackground(new java.awt.Color(224, 244, 255));
@@ -248,35 +295,25 @@ public class EntriPanel extends javax.swing.JPanel {
             }
         });
 
-        mahasiswaTable.setBackground(new java.awt.Color(255, 255, 232));
-        mahasiswaTable.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
-        mahasiswaTable.setModel(new javax.swing.table.DefaultTableModel(
+        nilaiTable.setBackground(new java.awt.Color(255, 255, 232));
+        nilaiTable.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        nilaiTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "NIM", "Nama", "Jenis Kelamin", "Email", "Kementerian", "Alamat"
+                "NIM", "Nama", "Kementerian", "Nilai Kinerja", "Nilai Kehadiran", "Nilai Kreativitas", "Nilai Akhir", "Hasil Kategori"
             }
         ));
-        mahasiswaTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        nilaiTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mahasiswaTableMouseClicked(evt);
+                nilaiTableMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(mahasiswaTable);
-
-        hapusButton.setBackground(new java.awt.Color(255, 102, 102));
-        hapusButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        hapusButton.setForeground(new java.awt.Color(255, 255, 255));
-        hapusButton.setText("Hapus");
-        hapusButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hapusButtonActionPerformed(evt);
-            }
-        });
+        jScrollPane2.setViewportView(nilaiTable);
 
         printButton.setBackground(new java.awt.Color(255, 102, 102));
         printButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
@@ -325,12 +362,8 @@ public class EntriPanel extends javax.swing.JPanel {
                         .addGap(267, 267, 267)
                         .addComponent(jLabel9))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
+                        .addGap(34, 34, 34)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(hapusButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(printButton))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -339,8 +372,9 @@ public class EntriPanel extends javax.swing.JPanel {
                                 .addComponent(cariButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(refreshButton))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 729, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                            .addComponent(printButton)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 767, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -348,25 +382,22 @@ public class EntriPanel extends javax.swing.JPanel {
                 .addGap(25, 25, 25)
                 .addComponent(jLabel9)
                 .addGap(32, 32, 32)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCariData)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel10)
-                        .addComponent(refreshButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cariButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(refreshButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cariButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtCariData))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(printButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hapusButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(printButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
         );
 
         judulLabel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         judulLabel.setForeground(new java.awt.Color(255, 255, 255));
         judulLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        judulLabel.setText("ENTRI DATA DIRI MAHASISWA");
+        judulLabel.setText("ENTRI PENILAIAN STAFF");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -380,9 +411,9 @@ public class EntriPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,103 +424,101 @@ public class EntriPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 116, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void simpanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanButtonActionPerformed
         // TODO add your handling code here:
-        controller_mahasiswa.insertMhs();
-        controller_mahasiswa.isiTableMhs();
-        controller_mahasiswa.reset();
-        
+        controller_nilai.insertOrUpdateNilai();
+        controller_nilai.isiTableNilai();
+        controller_nilai.reset();
     }//GEN-LAST:event_simpanButtonActionPerformed
 
-    private void nimTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimTextFieldActionPerformed
+    private void namaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nimTextFieldActionPerformed
+    }//GEN-LAST:event_namaTextFieldActionPerformed
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         // TODO add your handling code here:
-        controller_mahasiswa.update();
-        controller_mahasiswa.isiTableMhs();
-        controller_mahasiswa.reset();
+        controller_nilai.insertOrUpdateNilai();
+        controller_nilai.isiTableNilai();
+        controller_nilai.reset();
     }//GEN-LAST:event_editButtonActionPerformed
-
-    private void hapusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusButtonActionPerformed
-        // TODO add your handling code here:
-        controller_mahasiswa.delete();
-        controller_mahasiswa.isiTableMhs();
-        controller_mahasiswa.reset();
-    }//GEN-LAST:event_hapusButtonActionPerformed
 
     private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
         // TODO add your handling code here:
-        controller_mahasiswa.reset();
+        controller_nilai.reset();
     }//GEN-LAST:event_resetButtonActionPerformed
 
     private void cariButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariButtonActionPerformed
         // TODO add your handling code here:
-        controller_mahasiswa.carinama();
+        controller_nilai.carinama();
     }//GEN-LAST:event_cariButtonActionPerformed
 
     private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
         // TODO add your handling code here:
-        controller_mahasiswa.isiTableMhs();
+        controller_nilai.isiTableNilai();
     }//GEN-LAST:event_refreshButtonActionPerformed
 
     private void jScrollPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane2MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jScrollPane2MouseClicked
 
-    private void mahasiswaTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mahasiswaTableMouseClicked
+    private void nilaiTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nilaiTableMouseClicked
         // TODO add your handling code here:
-        controller_mahasiswa.isiField(mahasiswaTable.getSelectedRow());
-    }//GEN-LAST:event_mahasiswaTableMouseClicked
+        controller_nilai.isiField(nilaiTable.getSelectedRow());
+    }//GEN-LAST:event_nilaiTableMouseClicked
 
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
         // TODO add your handling code here:
-        controller_mahasiswa.printToCSV();
+        controller_nilai.printToCSV();
     }//GEN-LAST:event_printButtonActionPerformed
+
+    private void nimTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nimTextFieldActionPerformed
+
+    private void CalculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculateButtonActionPerformed
+        // TODO add your handling code here:
+        controller_nilai.calculate();
+    }//GEN-LAST:event_CalculateButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea alamatTextArea;
+    private javax.swing.JButton CalculateButton;
     private javax.swing.JButton cariButton;
     private javax.swing.JButton editButton;
-    private javax.swing.JTextField emailTextField;
-    private javax.swing.ButtonGroup genderButtonGroup;
-    private javax.swing.JButton hapusButton;
+    private javax.swing.JTextField hasilKatTextField;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel judulLabel;
-    private javax.swing.JComboBox<String> kementerianComboBox;
-    private javax.swing.JRadioButton lakiRadioButton;
-    private javax.swing.JTable mahasiswaTable;
+    private javax.swing.JTextField kehadiranTextField;
+    private javax.swing.JTextField kementerianTextField;
+    private javax.swing.JTextField kinerjaTextField;
+    private javax.swing.JTextField kreativitasTextField;
     private javax.swing.JTextField namaTextField;
+    private javax.swing.JTextField nilaiAkhirTextField;
+    private javax.swing.JTable nilaiTable;
     private javax.swing.JTextField nimTextField;
-    private javax.swing.JRadioButton perempuanRadioButton;
     private javax.swing.JButton printButton;
     private javax.swing.JButton refreshButton;
     private javax.swing.JButton resetButton;
     private javax.swing.JButton simpanButton;
     private javax.swing.JTextField txtCariData;
     // End of variables declaration//GEN-END:variables
-
-    public JTextArea getAlamatTextArea() {
-        return alamatTextArea;
-    }
 
     public JButton getCariButton() {
         return cariButton;
@@ -499,40 +528,40 @@ public class EntriPanel extends javax.swing.JPanel {
         return editButton;
     }
 
-    public JTextField getEmailTextField() {
-        return emailTextField;
+    public JTextField getHasilKatTextField() {
+        return hasilKatTextField;
     }
 
-    public JButton getHapusButton() {
-        return hapusButton;
+    public JTextField getKehadiranTextField() {
+        return kehadiranTextField;
     }
 
-    public JRadioButton getLakiRadioButton() {
-        return lakiRadioButton;
+    public JTextField getKementerianTextField() {
+        return kementerianTextField;
     }
 
-    public JTable getMahasiswaTable() {
-        return mahasiswaTable;
+    public JTextField getKinerjaTextField() {
+        return kinerjaTextField;
+    }
+
+    public JTextField getKreativitasTextField() {
+        return kreativitasTextField;
     }
 
     public JTextField getNamaTextField() {
         return namaTextField;
     }
 
-    public JTextField getNimTextField() {
-        return nimTextField;
+    public JTextField getNilaiAkhirTextField() {
+        return nilaiAkhirTextField;
     }
 
-    public JRadioButton getPerempuanRadioButton() {
-        return perempuanRadioButton;
+    public JTable getNilaiTable() {
+        return nilaiTable;
     }
 
     public JButton getPrintButton() {
         return printButton;
-    }
-
-    public JComboBox<String> getKementerianComboBox() {
-        return kementerianComboBox;
     }
 
     public JButton getRefreshButton() {
@@ -551,26 +580,22 @@ public class EntriPanel extends javax.swing.JPanel {
         return txtCariData;
     }
 
-    public ButtonGroup getGenderButtonGroup() {
-        return genderButtonGroup;
-    }
-
-    public void setGenderButtonGroup(ButtonGroup genderButtonGroup) {
-        this.genderButtonGroup = genderButtonGroup;
+    public JTextField getNimTextField() {
+        return nimTextField;
     }
 
     // Method to print data to CSV file
     public void printToCSV(File file) throws IOException {
-        TableModel model = mahasiswaTable.getModel();
+        TableModel modelNilai = nilaiTable.getModel();
         try (FileWriter writer = new FileWriter(file)) {
-            for (int i = 0; i < model.getColumnCount(); i++) {
-                writer.write(model.getColumnName(i) + ",");
+            for (int i = 0; i < modelNilai.getColumnCount(); i++) {
+                writer.write(modelNilai.getColumnName(i) + ",");
             }
             writer.write("\n");
 
-            for (int i = 0; i < model.getRowCount(); i++) {
-                for (int j = 0; j < model.getColumnCount(); j++) {
-                    writer.write(model.getValueAt(i, j).toString() + ",");
+            for (int i = 0; i < modelNilai.getRowCount(); i++) {
+                for (int j = 0; j < modelNilai.getColumnCount(); j++) {
+                    writer.write(modelNilai.getValueAt(i, j).toString() + ",");
                 }
                 writer.write("\n");
             }
@@ -580,4 +605,5 @@ public class EntriPanel extends javax.swing.JPanel {
     public void showMessage(String string) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
 }
