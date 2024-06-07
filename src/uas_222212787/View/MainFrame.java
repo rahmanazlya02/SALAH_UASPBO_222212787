@@ -21,6 +21,7 @@ public class MainFrame extends javax.swing.JFrame {
      * Creates new form MainFrame
      */
     public MainFrame() {
+        setTitle("Aplikasi Penilaian Kerja Anggota STIS Mengajar");
         initComponents();
         contentScrollPane.setViewportView(new LoginPanel(contentScrollPane, this));
     }
@@ -44,7 +45,7 @@ public class MainFrame extends javax.swing.JFrame {
         homeMenu = new javax.swing.JMenu();
         backHomeMenuItem = new javax.swing.JMenuItem();
         entriMenu = new javax.swing.JMenu();
-        mahasiswaMenuItem = new javax.swing.JMenuItem();
+        anggotaMenuItem = new javax.swing.JMenuItem();
         nilaiMenuItem = new javax.swing.JMenuItem();
         logoutMenu = new javax.swing.JMenu();
         logoutMenuItem = new javax.swing.JMenuItem();
@@ -81,15 +82,15 @@ public class MainFrame extends javax.swing.JFrame {
 
         entriMenu.setText("Entri");
 
-        mahasiswaMenuItem.setText("Mahasiswa");
-        mahasiswaMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        anggotaMenuItem.setText("Anggota");
+        anggotaMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mahasiswaMenuItemActionPerformed(evt);
+                anggotaMenuItemActionPerformed(evt);
             }
         });
-        entriMenu.add(mahasiswaMenuItem);
+        entriMenu.add(anggotaMenuItem);
 
-        nilaiMenuItem.setText("Nilai Mahasiswa");
+        nilaiMenuItem.setText("Nilai Anggota");
         nilaiMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nilaiMenuItemActionPerformed(evt);
@@ -117,14 +118,14 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mahasiswaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mahasiswaMenuItemActionPerformed
+    private void anggotaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anggotaMenuItemActionPerformed
         // TODO add your handling code here:
         if (isLoggedIn) {
             contentScrollPane.setViewportView(new EntriPanel());
         } else {
             JOptionPane.showMessageDialog(this, "Silahkan Login dahulu!", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_mahasiswaMenuItemActionPerformed
+    }//GEN-LAST:event_anggotaMenuItemActionPerformed
 
     private void nilaiMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nilaiMenuItemActionPerformed
         // TODO add your handling code here:
@@ -202,6 +203,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem anggotaMenuItem;
     private javax.swing.JMenuItem backHomeMenuItem;
     private javax.swing.JScrollPane contentScrollPane;
     private javax.swing.JMenu entriMenu;
@@ -209,7 +211,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu logoutMenu;
     private javax.swing.JMenuItem logoutMenuItem;
-    private javax.swing.JMenuItem mahasiswaMenuItem;
     private javax.swing.JMenuItem nilaiMenuItem;
     // End of variables declaration//GEN-END:variables
 }
