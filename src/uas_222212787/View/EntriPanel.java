@@ -367,7 +367,7 @@ public class EntriPanel extends javax.swing.JPanel {
         judulLabel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         judulLabel.setForeground(new java.awt.Color(255, 255, 255));
         judulLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        judulLabel.setText("ENTRI DATA DIRI ANGGOTA STIS MENGAJAR");
+        judulLabel.setText("ENTRI DATA DIRI ANGGOTA UKM STIS MENGAJAR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -381,8 +381,8 @@ public class EntriPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(289, 289, 289)
-                        .addComponent(judulLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 857, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(258, 258, 258)
+                        .addComponent(judulLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 908, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

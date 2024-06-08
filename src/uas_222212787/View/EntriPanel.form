@@ -37,8 +37,8 @@
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="289" max="-2" attributes="0"/>
-                      <Component id="judulLabel" min="-2" pref="857" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="258" max="-2" attributes="0"/>
+                      <Component id="judulLabel" min="-2" pref="908" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="43" max="32767" attributes="0"/>
@@ -601,7 +601,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="ENTRI DATA DIRI ANGGOTA STIS MENGAJAR"/>
+        <Property name="text" type="java.lang.String" value="ENTRI DATA DIRI ANGGOTA UKM STIS MENGAJAR"/>
       </Properties>
     </Component>
   </SubComponents>
