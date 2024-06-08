@@ -4,6 +4,7 @@
  */
 package uas_222212787.Model;
 
+
 /**
  *
  * @author Nazlya
@@ -20,7 +21,7 @@ public class Model_Mahasiswa {
         return nim;
     }
 
-    public void setNim(String nim) {
+    public void setNim(String nim){
         this.nim = nim;
     }
 
@@ -63,6 +64,5 @@ public class Model_Mahasiswa {
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
-    
     
 }

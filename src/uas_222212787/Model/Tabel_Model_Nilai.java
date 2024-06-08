@@ -4,6 +4,7 @@
  */
 package uas_222212787.Model;
 
+import java.text.DecimalFormat;
 import javax.swing.table.AbstractTableModel;
 import java.util.List;
 
@@ -72,12 +73,15 @@ public class Tabel_Model_Nilai extends AbstractTableModel{
                     return mahasiswa.getKementerian(); // Kembalikan kementerian mahasiswa
                 }
             }
-        } else { // Jika bukan kolom nama atau kementerian, kembalikan data dari list nilai
+        } else if (column == 6) { // Perubahan disini
+            double nilaiAkhir = listNilai.get(row).getNilaiAkhir();
+            DecimalFormat df = new DecimalFormat("#.##"); // Format dua angka di belakang koma
+            return df.format(nilaiAkhir);
+        } else {
             return switch (column) {
                 case 3 -> listNilai.get(row).getKinerja();
                 case 4 -> listNilai.get(row).getKehadiran();
                 case 5 -> listNilai.get(row).getKreativitas();
-                case 6 -> listNilai.get(row).getNilaiAkhir();
                 case 7 -> listNilai.get(row).getKatNilai();
                 default -> null;
             };

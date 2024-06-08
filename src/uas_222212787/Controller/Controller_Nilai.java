@@ -83,7 +83,10 @@ public class Controller_Nilai {
             double kreativitas = Double.parseDouble(frame_nilai.getKreativitasTextField().getText().trim());
 
             double nilaiAkhir = (0.35 * kinerja) + (0.35 * kehadiran) + (0.30 * kreativitas);
-            frame_nilai.getNilaiAkhirTextField().setText(String.valueOf(nilaiAkhir));
+            // Menggunakan String.format untuk membulatkan nilai akhir ke 2 angka di belakang koma
+            String formattedNilaiAkhir = String.format("%.2f", nilaiAkhir);
+
+            frame_nilai.getNilaiAkhirTextField().setText(formattedNilaiAkhir);
 
             String hasilKategori;
             if (nilaiAkhir <= 75) {
@@ -120,7 +123,9 @@ public class Controller_Nilai {
             double kreativitas = Double.parseDouble(frame_nilai.getKreativitasTextField().getText().trim());
 
             double nilaiAkhir = (0.35 * kinerja) + (0.35 * kehadiran) + (0.30 * kreativitas);
-            frame_nilai.getNilaiAkhirTextField().setText(String.valueOf(nilaiAkhir));
+            // Menggunakan String.format untuk membulatkan nilai akhir ke 2 angka di belakang koma
+            String formattedNilaiAkhir = String.format("%.2f", nilaiAkhir);
+            frame_nilai.getNilaiAkhirTextField().setText(formattedNilaiAkhir);
             
             String hasilKat;
             if (nilaiAkhir <= 75) {
@@ -139,7 +144,7 @@ public class Controller_Nilai {
             nilai.setKinerja(kinerja);
             nilai.setKehadiran(kehadiran);
             nilai.setKreativitas(kreativitas);
-            nilai.setNilaiAkhir(nilaiAkhir);
+            nilai.setNilaiAkhir(Double.parseDouble(formattedNilaiAkhir)); // Simpan nilai akhir yang sudah diformat
             nilai.setKatNilai(hasilKat);
 
             Model_Nilai existingNilai = implement_nilai.getNilaiByNim(nim);
@@ -227,7 +232,10 @@ public class Controller_Nilai {
             }
             
             double nilaiAkhir = (0.35 * nilai.getKehadiran()) + (0.35 * nilai.getKinerja()) + (0.30 * nilai.getKreativitas());
-            frame_nilai.getNilaiAkhirTextField().setText(String.valueOf(nilaiAkhir));
+            //frame_nilai.getNilaiAkhirTextField().setText(String.valueOf(nilaiAkhir));
+            // Menggunakan String.format untuk membulatkan nilai akhir ke 2 angka di belakang koma
+            String formattedNilaiAkhir = String.format("%.2f", nilaiAkhir);
+            frame_nilai.getNilaiAkhirTextField().setText(formattedNilaiAkhir);
 
             String hasilKategori;
             if (nilaiAkhir <= 75) {
@@ -236,8 +244,8 @@ public class Controller_Nilai {
                 hasilKategori = "Baik";
             } else {
                 hasilKategori = "Sangat Baik";
-            }
-            frame_nilai.getHasilKatTextField().setText(hasilKategori);
+            } frame_nilai.getHasilKatTextField().setText(hasilKategori);
+            
             frame_nilai.getHasilKatTextField().setText(hasilKategori);
         } else {
             JOptionPane.showMessageDialog(frame_nilai, "Baris yang dipilih tidak valid!", "Error", JOptionPane.ERROR_MESSAGE);

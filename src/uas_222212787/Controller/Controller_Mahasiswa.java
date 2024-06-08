@@ -21,6 +21,7 @@ import uas_222212787.Model.Tabel_Model_Mahasiswa;
 import uas_222212787.View.EntriPanel;
 import uas_222212787.View.MainFrame;
 
+
 /**
  *
  * @author Nazlya
@@ -184,9 +185,6 @@ public class Controller_Mahasiswa {
 
             // Memanggil metode DAO untuk memperbarui data
             implement_mahasiswa.update(mhs);
-            //memanggil metode DAO untuk memperbarui data nilai 
-            //Model_Nilai nilai = new Model_Nilai();
-            //implement_nilai.update(nilai);
 
             // Tampilkan pesan sukses
             javax.swing.JOptionPane.showMessageDialog(frame_mahasiswa, "Data berhasil diperbarui! Silahkan update data di form nilai", "Sukses", javax.swing.JOptionPane.INFORMATION_MESSAGE);
@@ -202,17 +200,7 @@ public class Controller_Mahasiswa {
     }
     
     //Menghapus Data pada tabel
-    public void delete(){
-        /*if(!frame_mahasiswa.getNimTextField().getText().trim().isEmpty()) {
-            // Mengambil NIM dari field
-            String nim = frame_mahasiswa.getNimTextField().getText().trim();
-            implement_mahasiswa.delete(nim);
-            
-            JOptionPane.showMessageDialog(null, "Data Berhasil Dihapus");
-        } else {
-            JOptionPane.showMessageDialog(frame_mahasiswa, "Silahkan Pilih Data yang Akan Dihapus");
-        }*/
-        
+    public void delete(){        
         if(!frame_mahasiswa.getNimTextField().getText().trim().isEmpty()) {
         // Mengambil NIM dari field
         String nim = frame_mahasiswa.getNimTextField().getText().trim();

@@ -82,4 +82,5 @@ public class Model_Nilai {
         this.katNilai = katNilai;
     }
     
+    
 }
