@@ -1,30 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package uas_222212787.Model;
-
-/**
- *
- * @author Nazlya
- */
-public class User {
-    private String username;
-    private String password;
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:805332b48568eed92bda604d0b8c22c7e95289a671668bace99cb3188b3758ff
+size 647

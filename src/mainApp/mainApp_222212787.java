@@ -1,22 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Other/File.java to edit this template
- */
-package mainApp;
-
-import uas_222212787.View.MainFrame;
-
-/**
- *
- * @author Nazlya
- */
-public class mainApp_222212787 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        // TODO code application logic here
-        new MainFrame().setVisible(true);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:4933e193a3c145adb2d4bedfb60855b5870c91744e03650670ee5935fed88f15
+size 517

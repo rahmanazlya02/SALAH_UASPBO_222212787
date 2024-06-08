@@ -1,15 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
-package uas_222212787.DAOimplement;
-import uas_222212787.Model.User;
-
-/**
- *
- * @author Nazlya
- */
-public interface Impl_User {
-    User getUser(String username);
-    void insert(User user);
-} 
+version https://git-lfs.github.com/spec/v1
+oid sha256:3b23fbc9bb938fb9f19f1090643258046b2dec880486502ab3edb3a53ae37e0c
+size 398
